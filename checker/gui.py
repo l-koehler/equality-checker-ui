@@ -49,4 +49,4 @@ class MainWindow(QMainWindow):
 app = QApplication(sys.argv)
 window = MainWindow()
 app.exec()
-exit(0)
+sys.exit(0)
