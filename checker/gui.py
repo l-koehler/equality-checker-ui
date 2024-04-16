@@ -28,16 +28,15 @@ class MainWindow(QMainWindow):
             else:
                 equality = "Unknown type of"
             if result['equal'] == 'true':
-                msg.setWindowTitle("Done!")
+                msg.setWindowTitle("Result")
                 msg.setText(f"Equal ({equality} equality)")
-                msg.setIcon(QMessageBox.Icon.Information)
             else:
-                msg.setWindowTitle("Done!")
+                msg.setWindowTitle("Result")
                 msg.setText(f"Not equal ({equality} inequality)")
-                msg.setIcon(QMessageBox.Icon.Information)
+            msg.setIcon(QMessageBox.Icon.Information)
         else:
             msg.setWindowTitle("Error!")
-            msg.setText(f"Got unexpected response from check():\n{result}")
+            msg.setText(f"Got unexpected response from check():\n\"{result}\"\nPlease open an issue on https://github.com/l-koehler/equality-checker")
             msg.setIcon(QMessageBox.Icon.Critical)
         msg.exec()
 
