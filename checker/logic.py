@@ -1,9 +1,9 @@
 import sympy
 
-from .utils import known_equal_pair, contains_incorrect_symbols
-from .utils import EqualityType
-from .parsing import logic_parser, UnsafeInputException
-
+from utils import known_equal_pair, contains_incorrect_symbols
+from utils import EqualityType
+import parsing.logic_parser as logic_parser
+from parsing.logic_parser import UnsafeInputException
 
 __all__ = ["check"]
 

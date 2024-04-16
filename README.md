@@ -4,15 +4,22 @@
 [![codecov](https://codecov.io/gh/isaacphysics/equality-checker/branch/master/graph/badge.svg)](https://codecov.io/gh/isaacphysics/equality-checker)
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/isaacphysics/equality-checker.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/isaacphysics/equality-checker/context:python)
 
-A not-quite-so-tiny-any-more server for testing the equivalence of two algebraic expressions using [SymPy](http://www.sympy.org/en/index.html).
+A not-quite-so-tiny-any-more program for testing the equivalence of two algebraic expressions using [SymPy](http://www.sympy.org/en/index.html).
 
 This project now uses Python 3. The last version using Python 2.7 was [v0.8.0](https://github.com/ucam-cl-dtg/equality-checker/releases/tag/v0.8.0).
 
-### Development Setup Instructions
-#### Simple Setup
+### GUI Setup
 1. Install [Python 3.10](https://www.python.org/)
 2. Clone this repository
 3. Run `pip install -r requirements.txt`
+   (remove Flask and gunicorn afterwards if you don't need the Server)
+4. Run `python gui.py`
+
+### Development Server Setup
+1. Install [Python 3.10](https://www.python.org/)
+2. Clone this repository
+3. Run `pip install -r requirements.txt`
+   (remove PyQt6 afterwards if you don't need the UI)
 4. Run `python server\api.py`
 
 Your server should be running at `http://localhost:5000/check`.
@@ -44,7 +51,7 @@ or, if something went wrong, an error like:
 }
 ```
 
-#### Docker Setup
+#### Docker Server Setup
 To develop the Docker container as well:
 
 5. Install [Docker](https://www.docker.com/)
@@ -52,7 +59,7 @@ To develop the Docker container as well:
 8. Test using `docker run -p 5000:5000 -it ucamcldtg/equality-checker` rather than running Python locally
 9. Optionally deploy to dockerhub: `docker push ucamcldtg/equality-checker` (requires authentication)
 
-### Production Use
+### Production Server Use
 
 The Docker container is available from [dockerhub](https://registry.hub.docker.com/u/ucamcldtg/equality-checker/) by running: `docker pull ucamcldtg/equality-checker` or by listing it as an image in a Docker Compose file. Port 5000 of the container will need to be mapped to the port the checker is expected to listen on.
 

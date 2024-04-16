@@ -3,9 +3,10 @@
 import numpy
 import sympy
 
-from .utils import known_equal_pair, eq_type_order, contains_incorrect_symbols
-from .utils import EqualityType
-from .parsing import maths_parser, UnsafeInputException
+from utils import known_equal_pair, eq_type_order, contains_incorrect_symbols
+from utils import EqualityType
+import parsing.maths_parser as maths_parser
+from parsing.maths_parser import UnsafeInputException
 
 
 # Hack to fix a bug with lambdify and complex infinity ('zoo') when transforming
