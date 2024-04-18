@@ -16,7 +16,11 @@ class MainWindow(QMainWindow):
     def compare(self):
         expr_target = self.le_target.text()
         expr_test = self.le_test.text()
-        result = maths.check(expr_target, expr_test, _quiet=True)
+        use_logic = self.rb_logic.isChecked()
+        if use_logic:
+            result = logic.check(expr_target, expr_test, _quiet=True)
+        else:
+            result = maths.check(expr_target, expr_test, _quiet=True)
         msg = QMessageBox()
         if 'error' in result:
             msg.setWindowTitle("Error!")
